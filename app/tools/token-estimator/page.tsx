@@ -1,14 +1,27 @@
 'use client';
 
 import { useState } from 'react';
-import { Calculator } from 'lucide-react';
+import { Calculator, Check, Copy, RotateCcw } from 'lucide-react';
 
 export default function TokenEstimator() {
   const [text, setText] = useState('');
+  const [copied, setCopied] = useState(false);
   
   const charCount = text.length;
+  const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
+  const lineCount = text ? text.split(/\r?\n/).length : 0;
   // A common rough estimate is 1 token per 4 characters for English text.
   const tokenEstimate = Math.ceil(charCount / 4);
+
+  async function copyEstimate() {
+    try {
+      await navigator.clipboard.writeText(String(tokenEstimate));
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    } catch {
+      setCopied(false);
+    }
+  }
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
@@ -44,6 +57,38 @@ export default function TokenEstimator() {
             <span className="text-3xl font-bold text-blue-700">{tokenEstimate.toLocaleString()}</span>
           </div>
         </div>
+        <div className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="rounded-xl border border-slate-100 bg-slate-50 p-3 text-center">
+            <span className="block text-xs font-medium text-slate-500">Words</span>
+            <span className="text-xl font-bold text-slate-900">{wordCount.toLocaleString()}</span>
+          </div>
+          <div className="rounded-xl border border-slate-100 bg-slate-50 p-3 text-center">
+            <span className="block text-xs font-medium text-slate-500">Lines</span>
+            <span className="text-xl font-bold text-slate-900">{lineCount.toLocaleString()}</span>
+          </div>
+          <button
+            type="button"
+            onClick={copyEstimate}
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50 p-3 text-sm font-medium text-blue-700 hover:bg-blue-100"
+          >
+            {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+            {copied ? 'Copied' : 'Copy estimate'}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setText('');
+              setCopied(false);
+            }}
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white p-3 text-sm font-medium text-slate-700 hover:bg-slate-50"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Reset
+          </button>
+        </div>
+        <p className="mt-4 text-sm text-slate-500">
+          Your text is processed in this browser and is not sent to a server by this tool.
+        </p>
       </div>
 
       <article className="prose prose-slate max-w-none">

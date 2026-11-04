@@ -1,3 +1,11 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About DevsAgentic',
+  description: 'Learn who maintains DevsAgentic and why we publish practical AI and web engineering content.',
+  alternates: { canonical: '/about' },
+};
+
 export default function AboutPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
@@ -21,7 +29,19 @@ export default function AboutPage() {
 
         <h2>Who We Are</h2>
         <p>
-          DevsAgentic is maintained by a small team of passionate software engineers and AI enthusiasts. We write about what we build, sharing the lessons we learn from real-world projects and experiments.
+          DevsAgentic is maintained by Ali Raza, a software engineering student and founder of
+          Ionix Growth. The site documents practical experiments, implementation lessons, and
+          engineering decisions from real-world web and AI projects.
+        </p>
+        <p>
+          We aim to publish accurate, useful material for developers. Articles are reviewed for
+          technical clarity, updated when important dependencies or practices change, and linked
+          to primary documentation where appropriate.
+        </p>
+        <h2>Contact and ownership</h2>
+        <p>
+          For corrections, collaboration requests, or questions about this site, use our{' '}
+          <a href="/contact">Contact page</a>. For privacy questions, email privacy@devsagentic.com.
         </p>
       </div>
     </div>

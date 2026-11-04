@@ -1,10 +1,18 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'How DevsAgentic collects, uses, and protects information.',
+  alternates: { canonical: '/privacy' },
+};
+
 export default function PrivacyPolicyPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
       <h1 className="text-4xl font-extrabold text-slate-900 mb-8">Privacy Policy</h1>
       
       <div className="prose prose-slate max-w-none">
-        <p><strong>Effective Date:</strong> September 10, 2026</p>
+        <p><strong>Effective Date:</strong> November 3, 2026</p>
 
         <p>
           At DevsAgentic, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.
@@ -15,7 +23,7 @@ export default function PrivacyPolicyPage() {
           We may collect information about you in a variety of ways. The information we may collect on the Site includes:
         </p>
         <ul>
-          <li><strong>Personal Data:</strong> Personally identifiable information, such as your name, shipping address, email address, and telephone number, that you voluntarily give to us when you choose to participate in various activities related to the Site (such as submitting a contact form).</li>
+          <li><strong>Personal Data:</strong> Information you voluntarily provide, such as your name and email address when contacting us. We do not request shipping addresses or telephone numbers through this site.</li>
           <li><strong>Derivative Data:</strong> Information our servers automatically collect when you access the Site, such as your IP address, your browser type, your operating system, your access times, and the pages you have viewed directly before and after accessing the Site.</li>
         </ul>
 
@@ -24,7 +32,7 @@ export default function PrivacyPolicyPage() {
           Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via the Site to:
         </p>
         <ul>
-          <li>Respond to customer service requests and provide support.</li>
+          <li>Respond to questions, correction requests, and collaboration requests.</li>
           <li>Improve our website and the content we provide.</li>
           <li>Monitor and analyze usage and trends to improve your experience with the Site.</li>
         </ul>
@@ -46,6 +54,13 @@ export default function PrivacyPolicyPage() {
         <p>
           <strong>DevsAgentic</strong><br />
           privacy@devsagentic.com
+        </p>
+        <h2>6. Cookies and advertising</h2>
+        <p>
+          We may use essential cookies and, after the required consent is obtained, analytics or
+          advertising technologies provided by third parties. These providers may process browser,
+          device, and usage information to measure performance or deliver relevant advertising.
+          See our <a href="/cookies">Cookie Policy</a> for more information and available choices.
         </p>
       </div>
     </div>
