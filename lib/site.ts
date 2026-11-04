@@ -10,7 +10,7 @@ export const siteConfig = {
 };
 
 export function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL || 'https://devagentic.tech';
+  return process.env.NEXT_PUBLIC_SITE_URL || 'https://www.devagentic.tech';
 }
 
 export function absoluteUrl(path: string): string {
