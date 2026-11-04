@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import {siteConfig} from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -53,7 +54,7 @@ export default function PrivacyPolicyPage() {
         </p>
         <p>
           <strong>DevsAgentic</strong><br />
-          privacy@devsagentic.com
+          {siteConfig.privacyEmail}
         </p>
         <h2>6. Cookies and advertising</h2>
         <p>

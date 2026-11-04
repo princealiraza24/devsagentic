@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import {siteConfig} from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Advertising Disclosure',
@@ -30,7 +31,7 @@ export default function AdvertisingDisclosurePage() {
         <h2>Questions</h2>
         <p>
           Questions about advertising or commercial relationships can be sent to
-          privacy@devsagentic.com.
+          {siteConfig.privacyEmail}.
         </p>
       </div>
     </div>

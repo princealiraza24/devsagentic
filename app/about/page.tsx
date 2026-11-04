@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import {siteConfig} from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'About DevsAgentic',
@@ -41,7 +42,7 @@ export default function AboutPage() {
         <h2>Contact and ownership</h2>
         <p>
           For corrections, collaboration requests, or questions about this site, use our{' '}
-          <a href="/contact">Contact page</a>. For privacy questions, email privacy@devsagentic.com.
+          <a href="/contact">Contact page</a>. For privacy questions, email {siteConfig.privacyEmail}.
         </p>
       </div>
     </div>

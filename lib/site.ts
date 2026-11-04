@@ -3,8 +3,10 @@ export const siteConfig = {
   description: 'Practical articles and tools for AI engineering, agentic workflows, and modern web development.',
   author: {
     name: 'Ali Raza',
-    url: '/about',
+    url: '/author/ali-raza',
   },
+  contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || 'contact@devagentic.tech',
+  privacyEmail: process.env.NEXT_PUBLIC_PRIVACY_EMAIL || 'privacy@devagentic.tech',
 };
 
 export function getSiteUrl(): string {

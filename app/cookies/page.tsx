@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import {siteConfig} from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Cookie Policy',
@@ -35,7 +36,7 @@ export default function CookiesPage() {
         </p>
         <h2>Questions</h2>
         <p>
-          Contact privacy@devsagentic.com with questions about cookies or privacy.
+          Contact {siteConfig.privacyEmail} with questions about cookies or privacy.
         </p>
       </div>
     </div>

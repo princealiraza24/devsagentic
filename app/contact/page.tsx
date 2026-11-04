@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import {siteConfig} from '@/lib/site';
 
 export default function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -98,7 +99,7 @@ export default function ContactPage() {
           )}
           {status === 'error' && (
             <p className="rounded-lg bg-red-50 p-4 text-sm text-red-800" role="alert">
-              We could not send your message. Please try again or email contact@devsagentic.com.
+              We could not send your message. Please try again or email {siteConfig.contactEmail}.
             </p>
           )}
         </form>
